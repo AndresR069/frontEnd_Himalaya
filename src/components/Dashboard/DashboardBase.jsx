@@ -1,48 +1,61 @@
-// import { TabList, Tab, Card } from '@tremor/react'
-// import React, { useState } from 'react'
-// import CardGridMap from './CardGridMap'
-// import ChartDonut from './ChartDonut'
-// import TableBase from './TableBase'
-
+import { TabGroup, Tab, TabList, Card, Flex, Button } from "@tremor/react";
+import React, { useState } from 'react'
+import { ClipboardDocumentListIcon, ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
+import TableEstudent from "./TableEstudent";
+import { useNavigate } from "react-router-dom";
 const DashboardBase = () => {
-
+    const [selectedView, setSelectedView] = useState(0);
+    const navigate = useNavigate(); //habilita la variable navegacion
+    //Cerrar sesion -----------------------------
+    const logout = () => {
+        localStorage.removeItem("jwt")
+        navigate("/")
+    }
     return (
 
-        // <main className='p-6 sm:p-10 min-h-screen max-h-full min-w-min max-w-full place-items-center bg-slate-200'>
-        //     {/* min-h-screen --> como minimo se ajuste a toda la pantalla
-        //         max-h-full --> como maximo se ajuste al contenido si es mas grande que la pantalla
-        //         bg-slate-200 color del contenedor
-        //     */}
+        <main className='flex items-center justify-center p-6 sm:p-10 min-h-screen max-h-full min-w-min max-w-screen bg-slate-200'>
+            {/* min-h-screen --> como minimo se ajuste a toda la pantalla
+                max-h-full --> como maximo se ajuste al contenido si es mas grande que la pantalla
+                bg-slate-200 color del contenedor
+            */}
 
-        //     <Card>
-        //         {/* <TabList defaultValue={selectedView} handleSelect={value => setSelectedView(value)} marginTop="mt-6">
-        //             <Tab value={1} text="Listado de Estudiantes" />
-        //             <Tab value={2} text="Consultas" />
-        //         </TabList> */}
-
-        //         {selectedView === 1 ? (
-        //             <>
-        //                 <div marginTop='mt-6'>
-
-        //                     {/* <TableBase /> */}
+            <Card className="max-w-screen-2xl">
 
 
-        //                 </div>
-        //             </>
-        //         ) : (
-        //             <>
-        //                 {/* <CardGridMap /> */}
-        //                 <div marginTop='mt-6'>
-        //                     {/* <ChartDonut /> */}
-        //                 </div>
-        //             </>
-        //         )
+                <Flex justifyContent="between" className='space-x-10 mt-6'>
+                    <TabGroup index={selectedView} onIndexChange={setSelectedView} className="mt-6">
+                        <TabList>
 
-        //         }
-        //     </Card>
+                            <Tab value={1} icon={ClipboardDocumentListIcon} >
+                                Listado de Estudiantes
+                            </Tab>
+                            <Tab value={2}>
+                                Consultas
+                            </Tab>
+                        </TabList>
+                    </TabGroup>
+                    <Button size="xl" variant="light" icon={ArrowLeftOnRectangleIcon} color='red' onClick={logout}>Cerrar Sesion</Button>
+                </Flex>
+                {selectedView === 1 ? (
+                    <>
+                        <div className="mt-6">
 
-        // </main>
-<h1>hola</h1>
+                            {/* Prototipo*/}
+                            <h1>Hola</h1>
+
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className="mt-6">
+                            {/* Tabla  Listado de estudiantes matriculados*/}
+                            <TableEstudent />
+                        </div>
+                    </>
+                )
+                }
+            </Card>
+        </main>
     )
 }
 

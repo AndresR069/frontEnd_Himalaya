@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify' //libreria de notifaciones
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
     const navigate = useNavigate(); //habilita la variable navegacion
     const URI_LOGUEO = 'http://localhost:8000/himalayaSchool/login';

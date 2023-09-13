@@ -8,12 +8,11 @@ const useAuth = () => {
   //get item from localstorage
 
   let token;
-  let ingreso;
   const _token = localStorage.getItem("jwt")
 
   if (_token) {
     token = JSON.parse(_token)
-    console.log("token: --->", token)
+    //console.log("token: --->", token)
   }
   if (token) {
     if (validacionToken(token)) {
@@ -40,9 +39,10 @@ async function validacionToken(token) {
     token: token
   }).then(res => {
     if (res.data === 'succes') {
-      console.log('OK');
-      return true
+      // console.log('OK');
       //console.log(res.data);
+      return true
+
     } else {
       return false
       // notificacion('Sesion invalida', 'error')
@@ -52,12 +52,6 @@ async function validacionToken(token) {
     console.log(error);
   })
 }
-//------------------------------------------------------------------------------------------------
-function notificacion(text, type) {
-  if (type === 'error') {
-    toast.error(text, { autoClose: 3000, toastId: customIdErr, position: toast.POSITION.BOTTOM_RIGHT })
-  }
-}
 
 const ProtectedRoute = ({
   redirectPath = '/'
@@ -66,7 +60,6 @@ const ProtectedRoute = ({
   const { auth } = useAuth();
 
   if (!auth) {
-    console.log("Ingreso");
     return <Navigate to={redirectPath} replace />
   } else {
     return <Outlet />
