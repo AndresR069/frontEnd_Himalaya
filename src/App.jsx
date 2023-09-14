@@ -9,8 +9,8 @@ import ProtectedRoute from './components/Login/ProtectedRoute.jsx'; //Protege la
 // import Register from './components/Login/Register.jsx';
 //importamos el router
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify' //libreria de notifaciones
-import axios from "axios";
+import { ToastContainer } from 'react-toastify' //libreria de notifaciones
+import REstudiante from './components/NewMatricula/REstudiante';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route element={<ProtectedRoute />}>
             <Route exact path='/dashboard' element={<DashboardBase />} />
-            {/* <Route exact path='/register' element={<Register />} /> */}
+            <Route exact path='/Restudiante' element={<REstudiante />} />
           </Route>
           <Route exact path='/' element={<DashboardLogin />} />
         </Routes>
