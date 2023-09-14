@@ -15,11 +15,11 @@ const TableEstudent = () => {
 
     /**variables de captura */
     const [estado, setEstado] = useState('ACTIVO')
-    const [curso, setcurso] = useState('TODOS')
-    const [nivel1, setnivel1] = useState(false)
-    const [nivel2, setnivel2] = useState(false)
-    const [nivel3, setnivel3] = useState(false)
-    const [nivel4, setnivel4] = useState(false)
+    const [curso, setcurso] = useState('PRE-JARDIN')
+    const [nivel1, setnivel1] = useState(true)
+    const [nivel2, setnivel2] = useState(true)
+    const [nivel3, setnivel3] = useState(true)
+    const [nivel4, setnivel4] = useState(true)
 
     const [pending, setPending] = useState(true); //notificara carga de datos en true -- false -- cargando
     const [rows, setRows] = useState([{}]); //filas tabla dashboard
@@ -27,14 +27,17 @@ const TableEstudent = () => {
     //Funcion post con retorno de datos***************************
     const [data, setData] = useState([]);
 
+    const customIdErr = "custom-id-error";//Id toast error ***EVITA DUPLICADOS AL HACER MULTIPLES CLICK*******
+    const customIdSucces = "custom-id-error";//Id toast error 
+
     //muestra notificacion segun el tipo y el texto enviados
     function notificacion(text, type) {
 
         if (type === 'error') {
-            toast.error(text, { autoClose: 3000, position: toast.POSITION.BOTTOM_RIGHT })
+            toast.error(text, { autoClose: 3000,toastId: customIdErr, position: toast.POSITION.BOTTOM_RIGHT })
         }
         if (type === 'succes') {
-            toast.success(text, { autoClose: 3000, position: toast.POSITION.BOTTOM_RIGHT })
+            toast.success(text, { autoClose: 3000,toastId: customIdSucces, position: toast.POSITION.BOTTOM_RIGHT })
         }
     }
     //--------columnas de la tabla ---------------------------------------
@@ -219,7 +222,7 @@ const TableEstudent = () => {
                     <Flex alignItems='center' justifyContent='start' className='-mt-1.5 space-x-1.5' >
                         <Text>Seleccione curso: </Text>
                         <select id="underline_select" className="block py-2.5 px-0 max-w-min border-gray-200 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
-                            defaultValue={'PARVULOS'}
+                            defaultValue={'PRE-JARDIN'}
                             onChange={(e) => setcurso(e.target.value)} >
                             <option value={"PRE-JARDIN"}>      PRE-JARDIN </option>
                             <option value={"JARDIN"}>          JARDIN </option>
