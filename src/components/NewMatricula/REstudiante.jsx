@@ -29,7 +29,6 @@ const REstudiante = () => {
     let identificacion = watch("tipo_doc"); //almacenando en tiempo real con "watch" lo digitado en el campo prueba
 
     useEffect(() => {
-        console.log("goa");
         //ejecutar el evento segun el ciclo de vida del componente " useEffect"
         if (identificacion === "N° Pasaporte") {
             // console.log("entro pasaporte");
@@ -72,7 +71,7 @@ const REstudiante = () => {
                                 Nombres (*)
                             </label>
                             <input
-                                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="grid-first-name"
                                 type="text"
                                 placeholder="Nombres"
@@ -257,7 +256,7 @@ const REstudiante = () => {
                                 Lugar Expedicion (*)
                             </label>
                             <input
-                                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="grid-first-name"
                                 type="text"
                                 placeholder="Lugar expedicion"
@@ -316,7 +315,7 @@ const REstudiante = () => {
                                 Direccion Residencia (*)
                             </label>
                             <input
-                                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="grid-first-name"
                                 type="text"
                                 placeholder="Direccion residencia"

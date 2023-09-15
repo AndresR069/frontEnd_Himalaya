@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 // import './App.css'
 //Dashboard
 import DashboardBase from './components/Dashboard/DashboardBase';
@@ -11,7 +11,10 @@ import ProtectedRoute from './components/Login/ProtectedRoute.jsx'; //Protege la
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify' //libreria de notifaciones
 import REstudiante from './components/NewMatricula/REstudiante';
-
+import Rmatricula from './components/NewMatricula/Rmatricula';
+import DashboardProcedencia from './components/NewMatricula/Procedencias/DashboardProcedencias';
+import Rsalud from './components/NewMatricula/Rsalud';
+import DashBoardAcudiente from './components/NewMatricula/Acudientes/DashboardAcudiente';
 function App() {
   return (
     <>
@@ -21,6 +24,11 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route exact path='/dashboard' element={<DashboardBase />} />
             <Route exact path='/Restudiante' element={<REstudiante />} />
+            <Route exact path='/Rmatricula' element={<Rmatricula />} />
+            <Route exact path='/Rprocedencia' element={<DashboardProcedencia />} />
+            <Route exact path='/Rsalud' element={<Rsalud />} />
+            <Route exact path='/Racudiente' element={<DashBoardAcudiente />} />
+
           </Route>
           <Route exact path='/' element={<DashboardLogin />} />
         </Routes>
