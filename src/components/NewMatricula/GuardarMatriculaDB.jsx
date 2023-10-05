@@ -12,16 +12,19 @@ const GuardarMatriculaDB = (acudientesForm) => {
     const navigate = useNavigate() //habilita la variable navegacion -->nos redigira una vez realizado la insercicon
 
     //notifaciones ...........documentacion -- react-tostify..............
+    const customIdErr = "custom-id-error";//Id toast error ***EVITA DUPLICADOS AL HACER MULTIPLES CLICK*******
+    const customIdSucces = "custom-id-succes";//Id toast error 
+    const customIdInfo = "custom-id-info";
     function notificacion(text, type) {
 
         if (type === 'error') {
-            toast.error(text, { autoClose: 3000, position: toast.POSITION.BOTTOM_RIGHT })
+            toast.error(text, { autoClose: 3000, toastId: customIdErr, position: toast.POSITION.BOTTOM_RIGHT })
         }
         if (type === 'info') {
-            toast.info(text, { autoClose: 3000, position: toast.POSITION.BOTTOM_RIGHT })
+            toast.info(text, { autoClose: 3000, toastId: customIdInfo, position: toast.POSITION.BOTTOM_RIGHT })
         }
         if (type === 'succes') {
-            toast.success(text, { autoClose: 4000, position: toast.POSITION.BOTTOM_CENTER })
+            toast.success(text, { autoClose: 4000, toastId: customIdSucces, position: toast.POSITION.BOTTOM_CENTER })
         }
     }
     //procedimiento para verificar la cantidad de acudientes registrados y enviar al localstorage
@@ -40,13 +43,13 @@ const GuardarMatriculaDB = (acudientesForm) => {
                 saveDB().then(resp => { //Si se resuvleve la inserccion a la DB, redirija al dashborad Principal
                     //console.log("respuesta" + resp)
                     if (resp === 'resolved') {
-                         localStorage.removeItem('form_data_estudent');
-                         localStorage.removeItem('form_matricula');
-                         localStorage.removeItem('form_procedencias');
-                         localStorage.removeItem('form_data_acud');
-                         localStorage.removeItem('form_salud');
-                         notificacion('Matriculada creada exitosamente!', 'succes') //succes si guarado db exitoso
-                         asyncCall();
+                        localStorage.removeItem('form_data_estudent');
+                        localStorage.removeItem('form_matricula');
+                        localStorage.removeItem('form_procedencias');
+                        localStorage.removeItem('form_data_acud');
+                        localStorage.removeItem('form_salud');
+                        notificacion('Matriculada creada exitosamente!', 'succes') //succes si guarado db exitoso
+                        asyncCall();
                     }
                 }).catch(err => {
                     console.log(err);
@@ -75,7 +78,7 @@ const GuardarMatriculaDB = (acudientesForm) => {
         console.log(result);
         if (result === 'resolved') {
             //window.alert('entro a guardar back-end')
-            navigate('/')
+            navigate('/dashboard')
         }
         // Expected output: "resolved"
     }

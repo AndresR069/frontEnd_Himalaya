@@ -15,6 +15,7 @@ import Rmatricula from './components/NewMatricula/Rmatricula';
 import DashboardProcedencia from './components/NewMatricula/Procedencias/DashboardProcedencias';
 import Rsalud from './components/NewMatricula/Rsalud';
 import DashBoardAcudiente from './components/NewMatricula/Acudientes/DashboardAcudiente';
+import EditMatricula from './components/EditMatricula/EditMatricula';
 function App() {
   return (
     <>
@@ -28,7 +29,7 @@ function App() {
             <Route exact path='/Rprocedencia' element={<DashboardProcedencia />} />
             <Route exact path='/Rsalud' element={<Rsalud />} />
             <Route exact path='/Racudiente' element={<DashBoardAcudiente />} />
-
+            <Route path='/edit/:id' element={<EditMatricula />} />
           </Route>
           <Route exact path='/' element={<DashboardLogin />} />
         </Routes>

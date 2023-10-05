@@ -1,11 +1,11 @@
-import { ArchiveBoxXMarkIcon, MagnifyingGlassCircleIcon, PlusSmallIcon } from '@heroicons/react/24/solid'
+import { ArchiveBoxXMarkIcon, MagnifyingGlassCircleIcon, PlusSmallIcon, PencilIcon, DocumentIcon } from '@heroicons/react/24/solid'
 import React, { useState, useEffect, useCallback } from "react";
 import styled, { keyframes } from 'styled-components';
 import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify' //libreria de notifaciones
 import DataTable from 'react-data-table-component'; //lib --> data table  https://react-data-table-component.netlify.app/?path=/docs/getting-started-examples--page
 import { Link } from 'react-router-dom'; //rutas en el dom
-import { Card, Title, Flex, Button, Divider, Callout, Text, Badge, Grid } from '@tremor/react'
+import { Card, Title, Flex, Button, Divider, Callout, Text, Badge, Grid, Icon } from '@tremor/react'
 import Exel from './ExelExport/Exel';
 
 const tablaUrl = "http://localhost:8000/himalayaSchool/estudiantes";//URL Back-end llenado de tabla principal
@@ -34,23 +34,31 @@ const TableEstudent = () => {
     function notificacion(text, type) {
 
         if (type === 'error') {
-            toast.error(text, { autoClose: 3000,toastId: customIdErr, position: toast.POSITION.BOTTOM_RIGHT })
+            toast.error(text, { autoClose: 3000, toastId: customIdErr, position: toast.POSITION.BOTTOM_RIGHT })
         }
         if (type === 'succes') {
-            toast.success(text, { autoClose: 3000,toastId: customIdSucces, position: toast.POSITION.BOTTOM_RIGHT })
+            toast.success(text, { autoClose: 3000, toastId: customIdSucces, position: toast.POSITION.BOTTOM_RIGHT })
         }
     }
     //--------columnas de la tabla ---------------------------------------
     const columns = [
         {
-            name: 'Estado',
-            selector: data => <Badge color="teal" icon={ArchiveBoxXMarkIcon} >{data.estado}</Badge>,
+            name: 'Acciones',
+            selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link><Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" /></>,
             sortable: true,
+            width: "160px"
+        },
+        {
+            name: 'Estado',
+            selector: data => data.estado === 'ACTIVO' ? (<Badge color="teal" icon={ArchiveBoxXMarkIcon} >{data.estado}</Badge>) : (<Badge color="red" icon={ArchiveBoxXMarkIcon} >{data.estado}</Badge>),
+            sortable: true,
+            width: "160px"
         },
         {
             name: 'Documento',
             selector: data => data.estu_documento,
             sortable: true,
+            width: "160px"
         },
         {
             name: 'Tipo Documento',
@@ -101,7 +109,7 @@ const TableEstudent = () => {
         },
         {
             name: 'Direccion',
-            selector: data => `${data.estu_direccion} ${data.estu_ciudad}`,
+            selector: data => data.estu_ciudad === null ? `${data.estu_direccion}` : `${data.estu_direccion} - ${data.estu_ciudad}`,
             sortable: true,
             width: '250px'
         },
@@ -111,8 +119,6 @@ const TableEstudent = () => {
             sortable: true,
             width: "160px"
         },
-
-
     ];
     //Loader tabla--------------------------------------------------
     const CustomLoader = () => (

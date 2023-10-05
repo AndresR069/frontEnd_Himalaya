@@ -12,20 +12,23 @@ const FormAcudiente = () => {
     const [acudientes, setAcudientes] = useState([]); //array acudientes
     const [count, setCount] = useState(0); //contador acudientes
     //notifaciones ...........documentacion -- react-tostify..............
+    const customIdErr = "custom-id-error";//Id toast error ***EVITA DUPLICADOS AL HACER MULTIPLES CLICK*******
+    const customIdSucces = "custom-id-error";//Id toast error 
+
     function notificacion(text, type) {
 
         if (type === 'error') {
-            toast.error(text, { autoClose: 3000, position: toast.POSITION.BOTTOM_RIGHT })
+            toast.error(text, { autoClose: 3000, toastId: customIdErr, position: toast.POSITION.BOTTOM_RIGHT })
         }
         if (type === 'succes') {
-            toast.success(text, { autoClose: 3000, position: toast.POSITION.BOTTOM_RIGHT })
+            toast.success(text, { autoClose: 3000, toastId: customIdSucces, position: toast.POSITION.BOTTOM_RIGHT })
         }
     }
     //procedimiento validar data y almacenar en variables temporales
     const customSubmit = (data) => {
         const temp = count + 1;
         const acudiente = Object.assign(data, { "contador": temp })//asignacion del contador al objeto acudiente que asigna su posicion en la consulta en db
-
+        console.log(acudiente);
         setCount(count + 1); //aumentar el contador
         if (temp > 0 && temp <= 3) {
             setAcudientes(arr => [...arr, acudiente]); //agregar objeto data:acudiente a variable acudiente array
@@ -181,10 +184,10 @@ const FormAcudiente = () => {
                         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-city">
                             Numero Documento
                         </label>
-                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="N° documento"
-                            hidden={_hidden}
+                        <input className={_hidden ? 'invisible' : "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} id="grid-city" type="number" placeholder="N° documento"
                             min={100000}
                             max={2999999999}
+                            hidden={_hidden}
                             required={!_required}
                             {...register("id_acudiente", {
                                 maxLength: 10,
@@ -198,7 +201,7 @@ const FormAcudiente = () => {
                         )}
                         {/** VALIDACION N° PASAPORTE */}
                         <input
-                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            className={_hidden ? "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-0" : 'invisible'}
                             id="grid-city"
                             type="text"
                             placeholder="N° pasaporte"

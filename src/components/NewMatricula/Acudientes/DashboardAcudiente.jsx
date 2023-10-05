@@ -13,6 +13,7 @@ import {
 import { FolderMinusIcon, ListBulletIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 import FormAcudiente from './FormAcudiente';
+import SearchAcud from './SearchAcud';
 // import ConsultaAcudiente from './ConsultaAcudiente';
 const DashBoardAcudiente = () => {
     const [selectedView, setSelectedView] = useState('formulario');
@@ -47,7 +48,7 @@ const DashBoardAcudiente = () => {
                             <FormAcudiente/>
                         </TabPanel>
                         <TabPanel>
-                            <h2>dos</h2>
+                            <SearchAcud/>
                         </TabPanel>
                     </TabPanels>
                 </TabGroup>
