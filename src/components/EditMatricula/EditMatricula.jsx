@@ -1,25 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Card, Metric, Text, Flex, Divider, Icon, Bold, Subtitle, Title, Callout } from "@tremor/react";
+import { Card, Metric, Text, Flex, Divider, Icon, Bold, Callout } from "@tremor/react";
 import { ChevronDoubleRightIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify' //libreria de notifaciones
 
 const URI = 'http://localhost:8000/himalayaSchool/getEstu'
-
+const URI_editar = 'http://localhost:8000/himalayaSchool/'
 const EditMatricula = () => {
     /**variables de captura */
     const navigate = useNavigate(); //habilita la variable navegacion -->nos redigira una vez realizado la insercicon
-
-    const [_hidden, setHidden] = useState(false);
-    const [_required, setRequired] = useState(false);
     //React hook form -- seccion validaciones
     const {
         register,
         handleSubmit,
         formState: { errors },
-        watch,
         setValue,
     } = useForm();
     const { id } = useParams();  //--Capturar el id del estudiante ------------------
@@ -31,7 +27,7 @@ const EditMatricula = () => {
 
         if (res.status == '200') {
             const element = res.data;
-            //cargue de data a campos visuales (inputs no editables)
+            //cargue de data a campos visuales 
             for (let index = 0; index < element.length; index++) {
                 const _element = element[index];
                 let llaves = Object.keys(_element)
@@ -48,7 +44,19 @@ const EditMatricula = () => {
         }
     }
 
-    let identificacion = watch("tipo_doc"); //almacenando en tiempo real con "watch" lo digitado en el campo prueba
+    //Editar data ---------------------------
+    const editar = async (data) => {
+        const res = await axios.get(URI_editar,{
+            data
+        })
+
+        if (res.status == '200') {
+
+        } else {
+            notificacion('Fallo conexion DB', 'error')
+        }
+    }
+
     //Ejecutar la funcion de busqueda al cargar el componente
     useEffect(() => {
         SubmitBusqueda();
@@ -57,6 +65,7 @@ const EditMatricula = () => {
     //procedimiento validar data y guardar
     const customSubmit = (data) => {
         console.log(data);
+        editar(data)
         // alert("validacion exitosa");
         //localStorage.setItem('form_matricula', JSON.stringify(data)); //form -->send -- localStorage
 
@@ -258,7 +267,7 @@ const EditMatricula = () => {
                             </label>
                             {/** VALIDACION DOCUMENTO DE IDENTIDAD */}
                             <input
-                                className={_hidden ? 'invisible' : "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"}
+                                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="grid-city"
                                 type="text"
                                 placeholder="Documento"

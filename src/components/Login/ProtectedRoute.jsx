@@ -44,6 +44,7 @@ async function validacionToken(token) {
       return true
 
     } else {
+      localStorage.removeItem("jwt") //remover token cuando sesion no valida
       return false
       // notificacion('Sesion invalida', 'error')
     }
