@@ -16,6 +16,7 @@ import DashboardProcedencia from './components/NewMatricula/Procedencias/Dashboa
 import Rsalud from './components/NewMatricula/Rsalud';
 import DashBoardAcudiente from './components/NewMatricula/Acudientes/DashboardAcudiente';
 import EditMatricula from './components/EditMatricula/EditMatricula';
+import Pdf from './components/Dashboard/PdfExport/Pdf';
 function App() {
   return (
     <>
@@ -30,6 +31,7 @@ function App() {
             <Route exact path='/Rsalud' element={<Rsalud />} />
             <Route exact path='/Racudiente' element={<DashBoardAcudiente />} />
             <Route path='/edit/:id' element={<EditMatricula />} />
+            <Route path='/pdf' element={<Pdf />} />
           </Route>
           <Route exact path='/' element={<DashboardLogin />} />
         </Routes>

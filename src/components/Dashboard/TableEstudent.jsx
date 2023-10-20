@@ -1,5 +1,5 @@
 import { ArchiveBoxXMarkIcon, MagnifyingGlassCircleIcon, PlusSmallIcon, PencilIcon, DocumentIcon } from '@heroicons/react/24/solid'
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import styled, { keyframes } from 'styled-components';
 import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify' //libreria de notifaciones
@@ -7,12 +7,10 @@ import DataTable from 'react-data-table-component'; //lib --> data table  https:
 import { Link } from 'react-router-dom'; //rutas en el dom
 import { Card, Title, Flex, Button, Divider, Callout, Text, Badge, Grid, Icon } from '@tremor/react'
 import Exel from './ExelExport/Exel';
-
 const tablaUrl = "http://localhost:8000/himalayaSchool/estudiantes";//URL Back-end llenado de tabla principal
 
 
 const TableEstudent = () => {
-
     /**variables de captura */
     const [estado, setEstado] = useState('ACTIVO')
     const [curso, setcurso] = useState('PRE-JARDIN')
@@ -44,7 +42,7 @@ const TableEstudent = () => {
     const columns = [
         {
             name: 'Acciones',
-            selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link><Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" /></>,
+            selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link>   <Link to='/pdf'><Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" /></Link></>,
             sortable: true,
             width: "160px"
         },
@@ -209,6 +207,7 @@ const TableEstudent = () => {
 
 
     return (
+        
         <Card className="max-h-fit max-h-screen">
             <ToastContainer /> {/** Necesario para que la notifacion se muestre --------------------- */}
 
