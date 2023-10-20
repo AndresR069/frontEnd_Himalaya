@@ -7,7 +7,7 @@ import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify' //libreria de notifaciones
 
 const URI = 'http://localhost:8000/himalayaSchool/getEstu'
-const URI_editar = 'http://localhost:8000/himalayaSchool/'
+const URI_editar = 'http://localhost:8000/himalayaSchool/editMatricula'
 const EditMatricula = () => {
     /**variables de captura */
     const navigate = useNavigate(); //habilita la variable navegacion -->nos redigira una vez realizado la insercicon
@@ -46,14 +46,16 @@ const EditMatricula = () => {
 
     //Editar data ---------------------------
     const editar = async (data) => {
-        const res = await axios.get(URI_editar,{
-            data
+        const res = await axios.put(URI_editar + id, {
+            data: data
         })
 
         if (res.status == '200') {
+            notificacion('Edicion exitosa', 'succes')
+            navigate('/dashboard')
 
         } else {
-            notificacion('Fallo conexion DB', 'error')
+            notificacion('Error al editar', 'error')
         }
     }
 
@@ -63,7 +65,7 @@ const EditMatricula = () => {
     }, [])
 
     //procedimiento validar data y guardar
-    const customSubmit = (data) => {
+    const update = (data) => {
         console.log(data);
         editar(data)
         // alert("validacion exitosa");
@@ -91,6 +93,7 @@ const EditMatricula = () => {
     }
     return (
         <div className="grid min-h-screen max-h-max place-items-center bg-slate-200">
+            <ToastContainer></ToastContainer>
             {/** Centrar contenido del div --> CARD */}
             <Card
                 className="max-w-3xl center"
@@ -109,7 +112,7 @@ const EditMatricula = () => {
 
                 <form
                     className="w-full justify-center"
-                    onSubmit={handleSubmit(customSubmit)}
+                    onSubmit={handleSubmit(update)}
                 >
                     {/* FORM DATA ESTUDENT */}
                     <div className="flex flex-wrap -mx-3 mb-6">
@@ -214,16 +217,16 @@ const EditMatricula = () => {
                                 id="grid-last-name"
                                 type="text"
                                 placeholder="Ciudad nacimiento"
-                                {...register("estu_ciudad", {
+                                {...register("estu_lugar_nacimiento", {
                                     minLength: 4,
                                     pattern: /[A-Za-z]{4,45}/,
                                 })}
                             />
                             {/* errors.name?.type === 'required' --> encadenamiento opcional */}
-                            {errors.estu_ciudad?.type === "minLength" && (
+                            {errors.estu_lugar_nacimiento?.type === "minLength" && (
                                 <small className="text-red-500 text-xs italic">El minimo de caracteres es 3</small>
                             )}
-                            {errors.estu_ciudad?.type === "pattern" && (
+                            {errors.estu_lugar_nacimiento?.type === "pattern" && (
                                 <small className="text-red-500 text-xs italic">Caracter invalido</small>
                             )}
                         </div>
