@@ -2,6 +2,7 @@ import { TabGroup, Tab, TabList, Card, Flex, Button } from "@tremor/react";
 import React, { useState } from 'react'
 import { ClipboardDocumentListIcon, ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import TableEstudent from "./TableEstudent";
+import Consultas from "./Consultas";
 import { useNavigate } from "react-router-dom";
 const DashboardBase = () => {
     const [selectedView, setSelectedView] = useState(0);
@@ -39,10 +40,7 @@ const DashboardBase = () => {
                 {selectedView === 1 ? (
                     <>
                         <div className="mt-6">
-
-                            {/* Prototipo*/}
-                            <h1>Hola</h1>
-
+                            <Consultas />
                         </div>
                     </>
                 ) : (
