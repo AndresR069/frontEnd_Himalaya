@@ -474,11 +474,12 @@ const Pdf = () => {
 
             {/*FIRMAS */}
 
+            <div style={pdfContainerStyle} className="w-4/4 bg-white mx-auto p-1">
 
             <Grid numItems={1} numItemsSm={1} numItemsLg={1} className="gap-2">
                 <Col numColSpan={1} numColSpanLg={1}>
                     <Card>
-                    <table className="table-auto">
+                    <table style={tableStyle} className="table-auto">
                     <tbody>
                     <tr>
                         <td className="font-bold">fIRMA ESTUDIANTE: _______________________ </td>
@@ -494,6 +495,7 @@ const Pdf = () => {
                 </Col>
             </Grid>  
 
+            </div>
 
 
             {/*  */}
@@ -505,3 +507,4 @@ const Pdf = () => {
 }
 
 export default Pdf;
+
