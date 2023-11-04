@@ -7,6 +7,21 @@ const year = date.getFullYear(); //para traer el año
 console.log(`Año actual: ${year}`);
 
 
+// prueba con datos estaticos
+
+const estudiante = {
+    nombres: "Juan",
+    apellidos: "Pérez",
+    lugarNacimiento: "Ciudad de Ejemplo",
+    fechaNacimiento: "01 de enero de 2000",
+    edad: 23,
+    documentoIdentidad: "123456789",
+    gradoAspira: "Undécimo",
+  };
+
+// fin prueba
+
+
 
 
 const Pdf = () => {
@@ -20,8 +35,44 @@ const Pdf = () => {
     useEffect(() => {
         generatePDF();
     }, [])
+
+
+    // Estilos  CSS
+
+  const pdfContainerStyle = {
+    width: "100%",
+    margin: "0 auto",
+    padding: "20px",
+    fontFamily: "Arial, sans-serif"
+  };
+
+  const headingStyle = {
+    fontSize: "15px",
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: "10px 0"
+  };
+
+  const hrStyle = {
+    border: "1px solid #1ba7e8",
+    margin: "15px 0"
+  };
+
+  const tableStyle = {
+    width: "100%",
+    borderCollapse: "collapse",
+    marginBottom: "20px"
+  };
+
+  const tableCellStyle = {
+    border: "1px solid #ccc",
+    padding: "8px",
+    fontSize: "12px"
+  };
+
+    // fin estilos
     return (
-        <div ref={conponentPDF} style={{ width: '100%' }} className="w-3/4 bg-white">   {/** Centrar contenido del div --> CARD**/}
+        <div ref={conponentPDF} style={pdfContainerStyle} className="w-3/4 bg-white">   {/** Centrar contenido del div --> CARD**/}
             <Flex justifyContent="start" alignItems="start" className='mt-10 space-x-10'>
                 <div className="w-40">
                     <img className="object-top object-scale-down h-24 w-96" src="escudo.jpg" alt="Imagen del colegio" />
@@ -35,24 +86,27 @@ const Pdf = () => {
 
             {/* info licencias */}
                 <div className="w-4/4 bg-white mx-auto p-1">
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '11px' }}>LICENCIA DE INICIACION DE LABORES N° 001858 DEL 15 DE DICIEMBRE DE 1993.</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '11px' }}>LICENCIA DE FUNCIONAMIENTO PARA LA PRESTACIÓN DEL SERVICIO EDUCATIVO FORMAL DE NATURALEZA PRIVADA N° 002040 DEL 01 DE AGOSTO DE 2002.</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '11px' }}>LICENCIA DE FUNCIONAMIENTO Y APROBACIÓN DE ESTUDIOS PARA PREESCOLAR, BÁSICA SECUNDARIA Y MEDIA VOCACIONAL No #16.</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '11px' }}>DEL 01 DE DICIEMBRE DEL 2005 Y RESOLUCIÓN DE AUTORIZACIÓN DE CAMBIO DE SEDE Y RAZÓN SOCIAL No. 924 DEL 03 DE MARZO DEL 2018</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '11px' }}>DE LA SECRETARIA DE EDUCACIÓN DE FUSAGASUGÁ DE NATRUALEZA PRIVADA, CALENDARIO A, CARACTER MIXTO, JORNADA UNICA</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '11px' }}>CODIGO DANE No 325290001851. CODIGO ICFES 13</h3>
-                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '15px' }}>PRE-ESCOLAR * BÁSICA PRIMARIA * BÁSICA SECUNDARIA * MEDIA VOCACIONAL</h3>
-                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '15px' }}>BACHILLERATOR ACADÉMICO CON ENFASIS EN IDIOMAS Y CIENCIAS</h3>
-                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '24px' }}>FORMULARIO DE PRE-MATRICULA-AÑO ACADEMICO {year}</h3>
+                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE INICIACION DE LABORES N° 001858 DEL 15 DE DICIEMBRE DE 1993.</h3>
+                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE FUNCIONAMIENTO PARA LA PRESTACIÓN DEL SERVICIO EDUCATIVO FORMAL DE NATURALEZA PRIVADA N° 002040 DEL 01 DE AGOSTO DE 2002.</h3>
+                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE FUNCIONAMIENTO Y APROBACIÓN DE ESTUDIOS PARA PREESCOLAR, BÁSICA SECUNDARIA Y MEDIA VOCACIONAL No #16.</h3>
+                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>DEL 01 DE DICIEMBRE DEL 2005 Y RESOLUCIÓN DE AUTORIZACIÓN DE CAMBIO DE SEDE Y RAZÓN SOCIAL No. 924 DEL 03 DE MARZO DEL 2018</h3>
+                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>DE LA SECRETARIA DE EDUCACIÓN DE FUSAGASUGÁ DE NATRUALEZA PRIVADA, CALENDARIO A, CARACTER MIXTO, JORNADA UNICA</h3>
+                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>CODIGO DANE No 325290001851. CODIGO ICFES 13</h3>
+                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '13px' }}>PRE-ESCOLAR * BÁSICA PRIMARIA * BÁSICA SECUNDARIA * MEDIA VOCACIONAL</h3>
+                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '13px' }}>BACHILLERATOR ACADÉMICO CON ENFASIS EN IDIOMAS Y CIENCIAS</h3>
+                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '20px' }}>FORMULARIO DE PRE-MATRICULA-AÑO ACADEMICO {year}</h3>
 
                 </div>
 
-            <hr/>
-
             {/* Información del estudiante */}
-            <h2 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '24px' }} >1. Información Básica del Estudiante</h2>
 
-            <hr/>
+            <hr style={hrStyle} />
+
+            <h2 style={headingStyle}>1. INFORMACIÓN BÁSICA DEL ESTUDIANTE</h2>
+
+            <hr style={hrStyle} />
+
+
             {/*  */}
 
 
@@ -63,25 +117,24 @@ const Pdf = () => {
                     <tbody>
                     <tr>
                         <td className="font-bold">Apellidos:</td>
-                        {/* <td>{estudiante.apellidos}</td> */}
+                        <td>{estudiante.apellidos}</td>
                         <td className="font-bold">Nombres:</td>
-                        {/* <td>{estudiante.nombres}</td> */}
+                        <td>{estudiante.nombres}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Lugar y Fecha de Nacimiento:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Edad:</td>
-                        {/* <td>{estudiante.edad}</td> */}
+                        <td>{estudiante.edad}</td>
                         <td className="font-bold">Documento de Identidad:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Grado al que Aspira:</td>
-                        {/* <td colSpan="3">{estudiante.gradoAspira}</td> */}
+                        <td colSpan="3">{estudiante.gradoAspira}</td>
                     </tr>
-                    {/* Agrega más filas y columnas para otros campos de información básica */}
                     </tbody>
                 </table>
                     </Card>
@@ -92,59 +145,85 @@ const Pdf = () => {
 
             {/* Estudios Aprobados  */}
 
-            <hr/>
+            <hr style={hrStyle} />
 
             {/* Información del estudiante */}
-            <h2 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '24px' }} >2. Estudios aprobados Colegios y Años</h2>
+            <h2 style={headingStyle}>2. ESTUDIOS APROBADOS COLEGIOS Y AÑOS</h2> 
 
-            <hr/>
+            <hr style={hrStyle} />
 
             <div>
-                <table className="table-auto">
+                <table style={tableStyle} className="table-auto">
                     <tbody>
                     <tr>
-                        <th className="border px-4 py-2">Pre-escolar</th>
-                        <th className="border px-4 py-2">Colegio/Año</th>
-                        <th className="border px-4 py-2">Basica Secundaria</th>
-                        <th className="border px-4 py-2">Colegio/Año</th>
+                        <th className="border px-4 py-2">PRE-ESCOLAR</th>
+                        <th className="border px-4 py-2">COLEGIO/AÑO</th>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">PRE-JARDIN</td>
-                        {/* <td className="border px-4 py-2">{estudiante.nombre}</td> */}
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">JARDIN</td>
-                        {/* <td className="border px-4 py-2">{estudiante.apellido}</td> */}
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">TRANSICIÓN</td>
-                        {/* <td className="border px-4 py-2">{estudiante.nombre}</td> */}
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2">BASICA PRIMARIA</td>
-                        {/* <td className="border px-4 py-2">{estudiante.apellido}</td> */}
+                    <th className="border px-4 py-2">BASICA PRIMARIA</th>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">PRIMERO</td>
-                        {/* <td className="border px-4 py-2">{estudiante.nombre}</td> */}
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">SEGUNDO</td>
-                        {/* <td className="border px-4 py-2">{estudiante.apellido}</td> */}
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">TERCERO</td>
-                        {/* <td className="border px-4 py-2">{estudiante.apellido}</td> */}
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">CUARTO</td>
-                        {/* <td className="border px-4 py-2">{estudiante.apellido}</td> */}
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">QUINTO</td>
-                        {/* <td className="border px-4 py-2">{estudiante.apellido}</td> */}
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
-                    {/* Agrega más filas para otros campos de información básica */}
+                    <tr>
+                    <th className="border px-4 py-2">BASICA SECUNDARIA</th>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2">SEXTO</td>
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2">SEPTIMO</td>
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2">OCTAVO</td>
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2">NOVEMO</td>
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
+                    <th className="border px-4 py-2">MEDIA VOCACIONAL</th>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2">DECIMO</td>
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2">ONCE</td>
+                        <td className="border px-4 py-2">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -152,103 +231,103 @@ const Pdf = () => {
             {/* 3- DATOS FAMILIARES */}
 
 
-            <hr/>
+            <hr style={hrStyle} />
 
             {/* Datos Familiares */}
-            <h2 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '24px' }} >3. Datos Familiares</h2>
+            <h2 style={headingStyle}>3. DATOS FAMILIARES</h2> 
 
-            <hr/>
+            <hr style={hrStyle} />
 
             <Grid numItems={1} numItemsSm={1} numItemsLg={1} className="gap-2">
                 <Col numColSpan={1} numColSpanLg={1}>
                     <Card>
-                    <table className="table-auto">
+                    <table style={tableStyle} className="table-auto">
                     <tbody>
                     <tr>
                         <td className="font-bold">Nombre del padre:</td>
-                        {/* <td>{estudiante.apellidos}</td> */}
+                        <td>{estudiante.apellidos}</td>
                         <td className="font-bold">Profesion:</td>
-                        {/* <td>{estudiante.nombres}</td> */}
+                        <td>{estudiante.nombres}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Residencia:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                         <td className="font-bold">Telefono:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                         <td className="font-bold">Empresa</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Dirección de la empresa:</td>
-                        {/* <td>{estudiante.edad}</td> */}
+                        <td>{estudiante.edad}</td>
                         <td className="font-bold">Telefono:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">C.C No:</td>
-                        {/* <td>{estudiante.edad}</td> */}
+                        <td>{estudiante.edad}</td>
                         <td className="font-bold">Expedida en:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                         <td className="font-bold">E-Mail:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                     </tr>
 
                     <tr>
                         <td className="font-bold">Nombre del Madre:</td>
-                        {/* <td>{estudiante.apellidos}</td> */}
+                        <td>{estudiante.apellidos}</td>
                         <td className="font-bold">Profesion:</td>
-                        {/* <td>{estudiante.nombres}</td> */}
+                        <td>{estudiante.nombres}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Residencia:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                         <td className="font-bold">Telefono:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                         <td className="font-bold">Empresa</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Dirección de la empresa:</td>
-                        {/* <td>{estudiante.edad}</td> */}
+                        <td>{estudiante.edad}</td>
                         <td className="font-bold">Telefono:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">C.C No:</td>
-                        {/* <td>{estudiante.edad}</td> */}
+                        <td>{estudiante.edad}</td>
                         <td className="font-bold">Expedida en:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                         <td className="font-bold">E-Mail:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                     </tr>
                     
                     <tr>
                         <td className="font-bold">Acudiente:</td>
-                        {/* <td>{estudiante.apellidos}</td> */}
+                        <td>{estudiante.apellidos}</td>
                         <td className="font-bold">Profesion:</td>
-                        {/* <td>{estudiante.nombres}</td> */}
+                        <td>{estudiante.nombres}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Residencia:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                         <td className="font-bold">Telefono:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                         <td className="font-bold">Empresa</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Dirección de la empresa:</td>
-                        {/* <td>{estudiante.edad}</td> */}
+                        <td>{estudiante.edad}</td>
                         <td className="font-bold">Telefono:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">C.C No:</td>
-                        {/* <td>{estudiante.edad}</td> */}
+                        <td>{estudiante.edad}</td>
                         <td className="font-bold">Expedida en:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                         <td className="font-bold">E-Mail:</td>
-                        {/* <td>{estudiante.documentoIdentidad}</td> */}
+                        <td>{estudiante.documentoIdentidad}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -261,12 +340,13 @@ const Pdf = () => {
             {/* 4- Situación academica */}
 
 
-            <hr/>
+            <hr style={hrStyle} />
 
             {/* Situación academica */}
-            <h2 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '24px' }} >4. Situación Academica</h2>
 
-            <hr/>
+            <h2 style={headingStyle}>4. SITUACIÓN ACADÉMICA</h2>
+
+            <hr style={hrStyle} />
 
             <Grid numItems={1} numItemsSm={1} numItemsLg={1} className="gap-2">
                 <Col numColSpan={1} numColSpanLg={1}>
@@ -275,17 +355,33 @@ const Pdf = () => {
                     <tbody>
                     <tr>
                         <td className="font-bold">A perdido alguna materia: </td>
-                        {/* <td>{estudiante.apellidos}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.apellidos}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Cual?:</td>
-                        {/* <td>{estudiante.nombres}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.nombres}</td>
                     </tr>
                     <tr>
                         <td className="font-bold">Asignaturas con mayor dificultad:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Asignaturas con mayor facilidad:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Explique como ha sido su comportamiento o convivencia en el colegio inmediatamente anterior:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                 
                     </tbody>
@@ -297,48 +393,80 @@ const Pdf = () => {
             {/* 5- Información General */}
 
 
-            <hr/>
+            <hr style={hrStyle} />
 
             {/* Información General */}
-            <h2 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '24px' }} >5. Información General</h2>
+            <h2 style={headingStyle} >5. INFORMACIÓN GENERAL</h2>
 
-            <hr/>
+            <hr style={hrStyle} />
+           
 
             <Grid numItems={1} numItemsSm={1} numItemsLg={1} className="gap-2">
-                <Col numColSpan={1} numColSpanLg={1}>
-                    <Card>
-                    <table className="table-auto">
+            <Col numColSpan={1} numColSpanLg={1}>
+                <Card>
+                <table style={tableStyle} className="table-auto">
                     <tbody>
                     <tr>
                         <td className="font-bold">¿Quien le recomendo esta institución?</td>
-                        {/* <td>{estudiante.apellidos}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.apellidos}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Como padres de familia ¿Que conoce de la institución?:</td>
-                        {/* <td>{estudiante.nombres}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.nombres}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Ustedes padres de familia ¿porque quieren que su hijo estudie en la institución?:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Porque:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Tiene algún familiar o hermano que esté estudiando en la institución?</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Que cursos:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Es esta una institución de caracter privado ¿Están ustedes en condiciones de asumir responsablemente todos los costos de servicio educativo?:</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
+                    </tr>
+                    <tr>
                         <td className="font-bold">Empresa</td>
-                        {/* <td colSpan="3">{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td> */}
+                    </tr>
+                    <tr>
+                        <td>{estudiante.lugarNacimiento}, {estudiante.fechaNacimiento}</td>
                     </tr>
                     </tbody>
                 </table>
-                    </Card>
-                </Col>
-            </Grid>         
+                </Card>
+            </Col>
+            </Grid>
+
 
             {/*  */}
 
             {/* Observaciones */}
 
 
-            <div className="w-4/4 bg-white mx-auto p-1">
+            <div style={pdfContainerStyle} className="w-4/4 bg-white mx-auto p-1">
                     <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '11px' }}>OBSERVACIÓN: La adquisición de este formulario no garantiza el cupo. y no se hará la devolución del valor del mismo. Debe traerse diligenciado el dia de la entrevista Psicóloga</h3>
 
             </div>
