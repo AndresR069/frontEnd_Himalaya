@@ -7,7 +7,7 @@ const year = date.getFullYear(); //para traer el año
 console.log(`Año actual: ${year}`);
 
 
-// prueba con datos estaticos
+// prueba con datos ficticios
 
 const estudiante = {
     nombres: "Juan",
