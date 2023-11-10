@@ -7,6 +7,7 @@ import DataTable from 'react-data-table-component'; //lib --> data table  https:
 import { Link } from 'react-router-dom'; //rutas en el dom
 import { Card, Title, Flex, Button, Divider, Callout, Text, Badge, Grid, Icon } from '@tremor/react'
 import Exel from './ExelExport/Exel';
+import Pdf from './PdfExport/Pdf';
 const tablaUrl = "http://localhost:8000/himalayaSchool/estudiantes";//URL Back-end llenado de tabla principal
 
 
@@ -42,7 +43,8 @@ const TableEstudent = () => {
     const columns = [
         {
             name: 'Acciones',
-            selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link>   <Link to='/pdf'><Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" /></Link></>,
+            selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link>   <Link to={`/pdf/${data.id_estudiante}`}><Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" ></Icon></Link></>,
+             //selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link>   <Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" ><Pdf></Pdf></Icon></>,
             sortable: true,
             width: "160px"
         },

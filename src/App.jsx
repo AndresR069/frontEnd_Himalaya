@@ -31,7 +31,7 @@ function App() {
             <Route exact path='/Rsalud' element={<Rsalud />} />
             <Route exact path='/Racudiente' element={<DashBoardAcudiente />} />
             <Route path='/edit/:id' element={<EditMatricula />} />
-            <Route path='/pdf' element={<Pdf />} />
+            <Route path='/pdf/:id' element={<Pdf />} />
           </Route>
           <Route exact path='/' element={<DashboardLogin />} />
         </Routes>

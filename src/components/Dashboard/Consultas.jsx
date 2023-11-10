@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Card, Grid, Title, BarChart } from "@tremor/react";
 import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify' //libreria de notifaciones
-const URI = "http://localhost:8000/himalayaSchool/genero";//URL Back-end llenado de tabla principal
+const URI = "http://localhost:8000/himalayaSchool/genero";//URL Back-end 
 
 
 const Consultas = () => {
