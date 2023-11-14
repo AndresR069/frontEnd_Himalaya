@@ -1,5 +1,5 @@
 import { ArchiveBoxXMarkIcon, MagnifyingGlassCircleIcon, PlusSmallIcon, PencilIcon, DocumentIcon } from '@heroicons/react/24/solid'
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled, { keyframes } from 'styled-components';
 import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify' //libreria de notifaciones
@@ -43,9 +43,8 @@ const TableEstudent = () => {
     const columns = [
         {
             name: 'Acciones',
-            selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link>   <Link to={`/pdf/${data.id_estudiante}`}><Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" ></Icon></Link></>,
-             //selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link>   <Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" ><Pdf></Pdf></Icon></>,
-            sortable: true,
+            selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link>   <Link to={`/pdf/${data.id_estudiante}`} target='_blank'><Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" ></Icon></Link></>,
+             sortable: true,
             width: "160px"
         },
         {

@@ -10,6 +10,7 @@
 }
 
 .custom-table-basic td {
+  font-size: 9px;
   border: 1px solid #ffffff; /* Agrega bordes a las celdas */
   padding: 3px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
   text-align: left; /* Centra el contenido de las celdas horizontalmente */
@@ -20,13 +21,13 @@
   border-collapse: collapse; /* Fusiona los bordes de las celdas */
   width: 100%;
 }
-
-.custom-table th,
 .custom-table td {
-  border: 1px solid #000; /* Agrega bordes a las celdas */
-  padding: 3px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
+  font-size: 9px;
+  border: 1px solid #000000; /* Agrega bordes a las celdas */
+  padding: 1px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
   text-align: center; /* Centra el contenido de las celdas horizontalmente */
-  height: 20px; /* Reduce la altura de las celdas */
+  height: 5px; /* Reduce la altura de las celdas */
+
 }
 
 .custom-table th {
@@ -43,7 +44,7 @@
   width: 100%;
 }
 .custom-table-fam td {
-  font-size: 12px;
+  font-size: 9px;
   border: 1px solid #ffffff; /* Agrega bordes a las celdas */
   padding: 1px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
   text-align: left; /* Centra el contenido de las celdas horizontalmente */
