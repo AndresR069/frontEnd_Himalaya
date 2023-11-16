@@ -17,6 +17,7 @@ import Rsalud from './components/NewMatricula/Rsalud';
 import DashBoardAcudiente from './components/NewMatricula/Acudientes/DashboardAcudiente';
 import EditMatricula from './components/EditMatricula/EditMatricula';
 import Pdf from './components/Dashboard/PdfExport/Pdf';
+import Oldmatricula from './components/OldMatricula/Oldmatricula.jsx';
 function App() {
   return (
     <>
@@ -32,6 +33,7 @@ function App() {
             <Route exact path='/Racudiente' element={<DashBoardAcudiente />} />
             <Route path='/edit/:id' element={<EditMatricula />} />
             <Route path='/pdf/:id' element={<Pdf />} />
+            <Route path='/oldMatricula' element={<Oldmatricula />} />
           </Route>
           <Route exact path='/' element={<DashboardLogin />} />
         </Routes>

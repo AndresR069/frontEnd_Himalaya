@@ -97,406 +97,409 @@ const Pdf = () => {
         generatePDF();
         return (
             <div ref={conponentPDF} style={pdfContainerStyle} className="w-3/4 bg-white">   {/** Centrar contenido del div --> CARD**/}
-                <Flex justifyContent="start" alignItems="start" className='mt-10 space-x-10'>
-                    <div className="w-40">
-                        <img className="object-top object-scale-down h-24 w-96" src='../escudo.jpg' alt="Imagen del colegio" />
+                {/* <div className="background-image"> */}
+                    <div>
+                    <Flex justifyContent="start" alignItems="start" className='mt-10 space-x-10'>
+                        <div className="w-40">
+                            <img className="object-top object-scale-down h-24 w-96" src='../escudo.jpg' alt="Imagen del colegio" />
+                        </div>
+                        <div className="text-center w-6/12 h-0.5">
+                            <h1 className="text-blue-500 text-3xl font-semibold">COLEGIO HIMALAYA</h1>
+                            <h2 className="text-blue-500 text-2xl">HIMALAYA SCHOOL</h2>
+                            <h3 className="text-blue-500 text-1xl font-normal">FUSAGASUGA - CUNDINAMARCA</h3>
+                        </div>
+                    </Flex>
+                    {/* info licencias */}
+                    <div className="w-4/4 bg-white mx-auto p-1">
+                        <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE INICIACION DE LABORES N° 001858 DEL 15 DE DICIEMBRE DE 1993.</h3>
+                        <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE FUNCIONAMIENTO PARA LA PRESTACIÓN DEL SERVICIO EDUCATIVO FORMAL DE NATURALEZA PRIVADA N° 002040 DEL 01 DE AGOSTO DE 2002.</h3>
+                        <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE FUNCIONAMIENTO Y APROBACIÓN DE ESTUDIOS PARA PREESCOLAR, BÁSICA SECUNDARIA Y MEDIA VOCACIONAL No #16.</h3>
+                        <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>DEL 01 DE DICIEMBRE DEL 2005 Y RESOLUCIÓN DE AUTORIZACIÓN DE CAMBIO DE SEDE Y RAZÓN SOCIAL No. 924 DEL 03 DE MARZO DEL 2018</h3>
+                        <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>DE LA SECRETARIA DE EDUCACIÓN DE FUSAGASUGÁ DE NATRUALEZA PRIVADA, CALENDARIO A, CARACTER MIXTO, JORNADA UNICA</h3>
+                        <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>CODIGO DANE No 325290001851. CODIGO ICFES 130096</h3>
+                        <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '13px' }}>PRE-ESCOLAR * BÁSICA PRIMARIA * BÁSICA SECUNDARIA * MEDIA VOCACIONAL</h3>
+                        <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '13px' }}>BACHILLERATOR ACADÉMICO CON ENFASIS EN IDIOMAS Y CIENCIAS</h3>
+                        <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '16px' }}>FORMULARIO DE PRE-MATRICULA-AÑO ACADEMICO 202 _____</h3>
                     </div>
-                    <div className="text-center w-6/12 h-0.5">
-                        <h1 className="text-blue-500 text-3xl font-semibold">COLEGIO HIMALAYA</h1>
-                        <h2 className="text-blue-500 text-2xl">HIMALAYA SCHOOL</h2>
-                        <h3 className="text-blue-500 text-1xl font-normal">FUSAGASUGA - CUNDINAMARCA</h3>
-                    </div>
-                </Flex>
-                {/* info licencias */}
-                <div className="w-4/4 bg-white mx-auto p-1">
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE INICIACION DE LABORES N° 001858 DEL 15 DE DICIEMBRE DE 1993.</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE FUNCIONAMIENTO PARA LA PRESTACIÓN DEL SERVICIO EDUCATIVO FORMAL DE NATURALEZA PRIVADA N° 002040 DEL 01 DE AGOSTO DE 2002.</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>LICENCIA DE FUNCIONAMIENTO Y APROBACIÓN DE ESTUDIOS PARA PREESCOLAR, BÁSICA SECUNDARIA Y MEDIA VOCACIONAL No #16.</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>DEL 01 DE DICIEMBRE DEL 2005 Y RESOLUCIÓN DE AUTORIZACIÓN DE CAMBIO DE SEDE Y RAZÓN SOCIAL No. 924 DEL 03 DE MARZO DEL 2018</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>DE LA SECRETARIA DE EDUCACIÓN DE FUSAGASUGÁ DE NATRUALEZA PRIVADA, CALENDARIO A, CARACTER MIXTO, JORNADA UNICA</h3>
-                    <h3 className="text-center text-base font-extralight mr-6" style={{ fontSize: '9px' }}>CODIGO DANE No 325290001851. CODIGO ICFES 130096</h3>
-                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '13px' }}>PRE-ESCOLAR * BÁSICA PRIMARIA * BÁSICA SECUNDARIA * MEDIA VOCACIONAL</h3>
-                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '13px' }}>BACHILLERATOR ACADÉMICO CON ENFASIS EN IDIOMAS Y CIENCIAS</h3>
-                    <h3 className="text-center text-base font-extralight font-bold mr-6" style={{ fontSize: '16px' }}>FORMULARIO DE PRE-MATRICULA-AÑO ACADEMICO 202 _____</h3>
-                </div>
 
-                {/* Información del estudiante */}
+                    {/* Información del estudiante */}
 
-                <hr style={hrStyle} />
-
-                <h2 style={headingStyle}>1. INFORMACIÓN BÁSICA DEL ESTUDIANTE</h2>
-
-                <hr style={hrStyle} />
-
-                <Grid numItems={1} numItemsSm={1} numItemsLg={1}>
-                    <Col numColSpan={1} numColSpanLg={1}>
-                        <Card>
-                            <div className="tabla-container">
-                                <table className="custom-table-basic">
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>Apellidos:</strong> {infobasic.estu_apellidos}</td>
-                                            <td><strong>Nombres: </strong>{infobasic.estu_nombres}</td>
-                                        </tr>
-                                        <tr>
-                                            <td ><strong>Lugar y Fecha de Nacimiento:</strong> {infobasic.estu_lugar_nacimiento}  {infobasic.estu_fecha_nacimiento} </td>
-                                            <td><strong>Edad:</strong>{infobasic.edad} </td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Documento de Identidad:</strong>{infobasic.edad}</td>
-                                            <td><strong>De</strong> {infobasic.estu_lugar_expedicion}</td>
-                                        </tr>
-                                        <tr>
-                                            <td ><strong>Grado al que Aspira:</strong> {infobasic.nombre_curso}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </Card>
-                    </Col>
-                </Grid>
-
-                {/*  */}
-
-                {/* Estudios Aprobados  */}
-
-                <hr style={hrStyle} />
-
-                {/* Información del estudiante */}
-                <h2 style={headingStyle}>2. ESTUDIOS APROBADOS COLEGIOS Y AÑOS</h2>
-
-                <hr style={hrStyle} />
-
-                <div className="tabla-container mt-2">
-                    <table className="custom-table">
-                        <thead>
-                            <tr>
-                                <td><strong>PRE-ESCOLAR</strong></td>
-                                <td><strong>COLEGIO/AÑO</strong></td>
-                                <td><strong>BASICA SECUNDARIA</strong></td>
-                                <td><strong>COLEGIO/AÑO</strong></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>PRE-JARDIN</td>
-                                <td ></td>
-                                <td >SEXTO</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JARDIN</td>
-                                <td></td>
-                                <td>SEPTIMO</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>TRANSICIÓN</td>
-                                <td></td>
-                                <td>OCTAVO</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><strong>BASICA PRIMARIA</strong></td>
-                                <td></td>
-                                <td>NOVENO</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>PRIMERO</td>
-                                <td></td>
-                                {/**MEDIA VOCACIONAL */}
-                                <td><strong>MEDIA VOCACIONAL</strong></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>SEGUNDO</td>
-                                <td></td>
-                                <td>DECIMO</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>TERCERO</td>
-                                <td></td>
-                                <td>UNDECIMO</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>CUARTO</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>QUINTO</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                {/* 3- DATOS FAMILIARES */}
-                <div className="mt-2">
                     <hr style={hrStyle} />
+
+                    <h2 style={headingStyle}>1. INFORMACIÓN BÁSICA DEL ESTUDIANTE</h2>
+
+                    <hr style={hrStyle} />
+
+                    <Grid numItems={1} numItemsSm={1} numItemsLg={1}>
+                        <Col numColSpan={1} numColSpanLg={1}>
+                            <Card>
+                                <div className="tabla-container">
+                                    <table className="custom-table-basic">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Apellidos:</strong> {infobasic.estu_apellidos}</td>
+                                                <td><strong>Nombres: </strong>{infobasic.estu_nombres}</td>
+                                            </tr>
+                                            <tr>
+                                                <td ><strong>Lugar y Fecha de Nacimiento:</strong> {infobasic.estu_lugar_nacimiento}  {infobasic.estu_fecha_nacimiento} </td>
+                                                <td><strong>Edad:</strong>{infobasic.edad} </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Documento de Identidad:</strong>{infobasic.edad}</td>
+                                                <td><strong>De</strong> {infobasic.estu_lugar_expedicion}</td>
+                                            </tr>
+                                            <tr>
+                                                <td ><strong>Grado al que Aspira:</strong> {infobasic.nombre_curso}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </Card>
+                        </Col>
+                    </Grid>
+
+                    {/*  */}
+
+                    {/* Estudios Aprobados  */}
+
+                    <hr style={hrStyle} />
+
+                    {/* Información del estudiante */}
+                    <h2 style={headingStyle}>2. ESTUDIOS APROBADOS COLEGIOS Y AÑOS</h2>
+
+                    <hr style={hrStyle} />
+
+                    <div className="tabla-container mt-2">
+                        <table className="custom-table">
+                            <thead>
+                                <tr>
+                                    <td><strong>PRE-ESCOLAR</strong></td>
+                                    <td><strong>COLEGIO/AÑO</strong></td>
+                                    <td><strong>BASICA SECUNDARIA</strong></td>
+                                    <td><strong>COLEGIO/AÑO</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PRE-JARDIN</td>
+                                    <td ></td>
+                                    <td >SEXTO</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>JARDIN</td>
+                                    <td></td>
+                                    <td>SEPTIMO</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>TRANSICIÓN</td>
+                                    <td></td>
+                                    <td>OCTAVO</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>BASICA PRIMARIA</strong></td>
+                                    <td></td>
+                                    <td>NOVENO</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>PRIMERO</td>
+                                    <td></td>
+                                    {/**MEDIA VOCACIONAL */}
+                                    <td><strong>MEDIA VOCACIONAL</strong></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>SEGUNDO</td>
+                                    <td></td>
+                                    <td>DECIMO</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>TERCERO</td>
+                                    <td></td>
+                                    <td>UNDECIMO</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>CUARTO</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>QUINTO</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {/* 3- DATOS FAMILIARES */}
+                    <div className="mt-2">
+                        <hr style={hrStyle} />
+                    </div>
+                    {/* Datos Familiares */}
+                    <h2 style={headingStyle}>3. DATOS FAMILIARES</h2>
+
+                    <hr style={hrStyle} />
+
+                    <Grid numItems={1} numItemsSm={1} numItemsLg={1} className="gap-1">
+                        <Col numColSpan={1} numColSpanLg={1}>
+                            <Card>
+                                <div className="tabla-container">
+                                    <table className="custom-table-fam">
+                                        <tbody>
+                                            {/**Acudientes */}
+
+                                            {/**SI SOLO UN ACUDIENTE */}
+                                            {acudientes.length === 1 ? (
+                                                <>
+                                                    {acudientes.map((item) => (
+                                                        <>
+                                                            {item.nombre_parentesco === 'otro' ? (
+
+                                                                <tr>
+                                                                    <td colSpan={3}><strong>ACUDIENTE:</strong> {item.acud_nombres}</td>
+                                                                    <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            ) : (
+                                                                <tr>
+                                                                    {item.nombre_parentesco === 'papa' ? (
+                                                                        <td colSpan={3}><strong>NOMBRE DEL PADRE:</strong> {item.acud_nombres}</td>
+                                                                    ) : item.nombre_parentesco === 'mama' ? (
+                                                                        <td colSpan={3}><strong>NOMBRE DE LA MADRE:</strong> {item.acud_nombres}</td>
+                                                                    ) : (
+                                                                        <></>
+                                                                    )}
+                                                                    <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            )}
+                                                            <tr>
+                                                                <td colSpan={2}><strong>RESIDENCIA:</strong>{item.acud_direccion}</td>
+                                                                <td><strong>TELEFONO:</strong>{item.celular}</td>
+                                                                <td><strong>EMPRESA:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>CC N°:</strong>{item.acu_documento}</td>
+                                                                <td colSpan={2}><strong>EXPEDIDA EN:</strong>{item.acud_lugar_exp_doc}</td>
+                                                                <td><strong>E-MAIL:</strong>{item.acud_correo}</td>
+                                                            </tr>
+                                                            {/**ACUDIENTE 2 */}
+                                                            <tr>
+                                                                <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
+                                                                <td><strong>PROFESION:</strong></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={2}><strong>RESIDENCIA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                                <td><strong>EMPRESA:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>CC N°:</strong></td>
+                                                                <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
+                                                                <td><strong>E-MAIL:</strong></td>
+                                                            </tr>
+                                                            {/**ACUDIENTE 3 */}
+                                                            <tr>
+                                                                <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
+                                                                <td><strong>PROFESION:</strong></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={2}><strong>RESIDENCIA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                                <td><strong>EMPRESA:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>CC N°:</strong></td>
+                                                                <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
+                                                                <td><strong>E-MAIL:</strong></td>
+                                                            </tr>
+                                                        </>
+                                                    ))}
+                                                </>) : acudientes.length === 2 ? (<>
+                                                    {acudientes.map((item) => (
+                                                        <>
+                                                            {item.nombre_parentesco === 'otro' ? (
+
+                                                                <tr>
+                                                                    <td colSpan={3}><strong>ACUDIENTE:</strong> {item.acud_nombres}</td>
+                                                                    <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            ) : (
+                                                                <tr>
+                                                                    {item.nombre_parentesco === 'papa' ? (
+                                                                        <td colSpan={3}><strong>NOMBRE DEL PADRE:</strong> {item.acud_nombres}</td>
+                                                                    ) : item.nombre_parentesco === 'mama' ? (
+                                                                        <td colSpan={3}><strong>NOMBRE DE LA MADRE:</strong> {item.acud_nombres}</td>
+                                                                    ) : (
+                                                                        <></>
+                                                                    )}
+                                                                    <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            )}
+                                                            <tr>
+                                                                <td colSpan={2}><strong>RESIDENCIA:</strong>{item.acud_direccion}</td>
+                                                                <td><strong>TELEFONO:</strong>{item.celular}</td>
+                                                                <td><strong>EMPRESA:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>CC N°:</strong>{item.acu_documento}</td>
+                                                                <td colSpan={2}><strong>EXPEDIDA EN:</strong>{item.acud_lugar_exp_doc}</td>
+                                                                <td><strong>E-MAIL:</strong>{item.acud_correo}</td>
+                                                            </tr>
+                                                            {/**ACUDIENTE 3*/}
+                                                            <tr>
+                                                                <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
+                                                                <td><strong>PROFESION:</strong></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={2}><strong>RESIDENCIA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                                <td><strong>EMPRESA:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>CC N°:</strong></td>
+                                                                <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
+                                                                <td><strong>E-MAIL:</strong></td>
+                                                            </tr>
+                                                        </>
+                                                    ))}
+                                                </>) : acudientes.length === 3 ? (<>
+                                                    {acudientes.map((item) => (
+                                                        <>
+                                                            {item.nombre_parentesco === 'otro' ? (
+
+                                                                <tr>
+                                                                    <td colSpan={3}><strong>ACUDIENTE:</strong> {item.acud_nombres}</td>
+                                                                    <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            ) : (
+                                                                <tr>
+                                                                    {item.nombre_parentesco === 'papa' ? (
+                                                                        <td colSpan={3}><strong>NOMBRE DEL PADRE:</strong> {item.acud_nombres}</td>
+                                                                    ) : item.nombre_parentesco === 'mama' ? (
+                                                                        <td colSpan={3}><strong>NOMBRE DE LA MADRE:</strong> {item.acud_nombres}</td>
+                                                                    ) : (
+                                                                        <></>
+                                                                    )}
+                                                                    <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            )}
+                                                            <tr>
+                                                                <td colSpan={2}><strong>RESIDENCIA:</strong>{item.acud_direccion}</td>
+                                                                <td><strong>TELEFONO:</strong>{item.celular}</td>
+                                                                <td><strong>EMPRESA:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                                <td><strong>TELEFONO:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>CC N°:</strong>{item.acu_documento}</td>
+                                                                <td colSpan={2}><strong>EXPEDIDA EN:</strong>{item.acud_lugar_exp_doc}</td>
+                                                                <td><strong>E-MAIL:</strong>{item.acud_correo}</td>
+                                                            </tr>
+                                                        </>
+                                                    ))}
+                                                </>) : (<>
+                                                    {/**ACUDIENTE 1*/}
+                                                    <tr>
+                                                        <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
+                                                        <td><strong>PROFESION:</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colSpan={2}><strong>RESIDENCIA:</strong></td>
+                                                        <td><strong>TELEFONO:</strong></td>
+                                                        <td><strong>EMPRESA:</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                        <td><strong>TELEFONO:</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>CC N°:</strong></td>
+                                                        <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
+                                                        <td><strong>E-MAIL:</strong></td>
+                                                    </tr>
+                                                    {/**ACUDIENTE 2*/}
+                                                    <tr>
+                                                        <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
+                                                        <td><strong>PROFESION:</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colSpan={2}><strong>RESIDENCIA:</strong></td>
+                                                        <td><strong>TELEFONO:</strong></td>
+                                                        <td><strong>EMPRESA:</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                        <td><strong>TELEFONO:</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>CC N°:</strong></td>
+                                                        <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
+                                                        <td><strong>E-MAIL:</strong></td>
+                                                    </tr>
+                                                    {/**ACUDIENTE 3*/}
+                                                    <tr>
+                                                        <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
+                                                        <td><strong>PROFESION:</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colSpan={2}><strong>RESIDENCIA:</strong></td>
+                                                        <td><strong>TELEFONO:</strong></td>
+                                                        <td><strong>EMPRESA:</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
+                                                        <td><strong>TELEFONO:</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>CC N°:</strong></td>
+                                                        <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
+                                                        <td><strong>E-MAIL:</strong></td>
+                                                    </tr>
+                                                </>)}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </Card>
+                        </Col>
+                    </Grid>
                 </div>
-                {/* Datos Familiares */}
-                <h2 style={headingStyle}>3. DATOS FAMILIARES</h2>
-
-                <hr style={hrStyle} />
-
-                <Grid numItems={1} numItemsSm={1} numItemsLg={1} className="gap-1">
-                    <Col numColSpan={1} numColSpanLg={1}>
-                        <Card>
-                            <div className="tabla-container">
-                                <table className="custom-table-fam">
-                                    <tbody>
-                                        {/**Acudientes */}
-
-                                        {/**SI SOLO UN ACUDIENTE */}
-                                        {acudientes.length === 1 ? (
-                                            <>
-                                                {acudientes.map((item) => (
-                                                    <>
-                                                        {item.nombre_parentesco === 'otro' ? (
-
-                                                            <tr>
-                                                                <td colSpan={3}><strong>ACUDIENTE:</strong> {item.acud_nombres}</td>
-                                                                <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
-                                                                <td></td>
-                                                            </tr>
-                                                        ) : (
-                                                            <tr>
-                                                                {item.nombre_parentesco === 'papa' ? (
-                                                                    <td colSpan={3}><strong>NOMBRE DEL PADRE:</strong> {item.acud_nombres}</td>
-                                                                ) : item.nombre_parentesco === 'mama' ? (
-                                                                    <td colSpan={3}><strong>NOMBRE DE LA MADRE:</strong> {item.acud_nombres}</td>
-                                                                ) : (
-                                                                    <></>
-                                                                )}
-                                                                <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
-                                                                <td></td>
-                                                            </tr>
-                                                        )}
-                                                        <tr>
-                                                            <td colSpan={2}><strong>RESIDENCIA:</strong>{item.acud_direccion}</td>
-                                                            <td><strong>TELEFONO:</strong>{item.celular}</td>
-                                                            <td><strong>EMPRESA:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><strong>CC N°:</strong>{item.acu_documento}</td>
-                                                            <td colSpan={2}><strong>EXPEDIDA EN:</strong>{item.acud_lugar_exp_doc}</td>
-                                                            <td><strong>E-MAIL:</strong>{item.acud_correo}</td>
-                                                        </tr>
-                                                        {/**ACUDIENTE 2 */}
-                                                        <tr>
-                                                            <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
-                                                            <td><strong>PROFESION:</strong></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={2}><strong>RESIDENCIA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                            <td><strong>EMPRESA:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><strong>CC N°:</strong></td>
-                                                            <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
-                                                            <td><strong>E-MAIL:</strong></td>
-                                                        </tr>
-                                                        {/**ACUDIENTE 3 */}
-                                                        <tr>
-                                                            <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
-                                                            <td><strong>PROFESION:</strong></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={2}><strong>RESIDENCIA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                            <td><strong>EMPRESA:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><strong>CC N°:</strong></td>
-                                                            <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
-                                                            <td><strong>E-MAIL:</strong></td>
-                                                        </tr>
-                                                    </>
-                                                ))}
-                                            </>) : acudientes.length === 2 ? (<>
-                                                {acudientes.map((item) => (
-                                                    <>
-                                                        {item.nombre_parentesco === 'otro' ? (
-
-                                                            <tr>
-                                                                <td colSpan={3}><strong>ACUDIENTE:</strong> {item.acud_nombres}</td>
-                                                                <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
-                                                                <td></td>
-                                                            </tr>
-                                                        ) : (
-                                                            <tr>
-                                                                {item.nombre_parentesco === 'papa' ? (
-                                                                    <td colSpan={3}><strong>NOMBRE DEL PADRE:</strong> {item.acud_nombres}</td>
-                                                                ) : item.nombre_parentesco === 'mama' ? (
-                                                                    <td colSpan={3}><strong>NOMBRE DE LA MADRE:</strong> {item.acud_nombres}</td>
-                                                                ) : (
-                                                                    <></>
-                                                                )}
-                                                                <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
-                                                                <td></td>
-                                                            </tr>
-                                                        )}
-                                                        <tr>
-                                                            <td colSpan={2}><strong>RESIDENCIA:</strong>{item.acud_direccion}</td>
-                                                            <td><strong>TELEFONO:</strong>{item.celular}</td>
-                                                            <td><strong>EMPRESA:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><strong>CC N°:</strong>{item.acu_documento}</td>
-                                                            <td colSpan={2}><strong>EXPEDIDA EN:</strong>{item.acud_lugar_exp_doc}</td>
-                                                            <td><strong>E-MAIL:</strong>{item.acud_correo}</td>
-                                                        </tr>
-                                                        {/**ACUDIENTE 3*/}
-                                                        <tr>
-                                                            <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
-                                                            <td><strong>PROFESION:</strong></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={2}><strong>RESIDENCIA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                            <td><strong>EMPRESA:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><strong>CC N°:</strong></td>
-                                                            <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
-                                                            <td><strong>E-MAIL:</strong></td>
-                                                        </tr>
-                                                    </>
-                                                ))}
-                                            </>) : acudientes.length === 3 ? (<>
-                                                {acudientes.map((item) => (
-                                                    <>
-                                                        {item.nombre_parentesco === 'otro' ? (
-
-                                                            <tr>
-                                                                <td colSpan={3}><strong>ACUDIENTE:</strong> {item.acud_nombres}</td>
-                                                                <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
-                                                                <td></td>
-                                                            </tr>
-                                                        ) : (
-                                                            <tr>
-                                                                {item.nombre_parentesco === 'papa' ? (
-                                                                    <td colSpan={3}><strong>NOMBRE DEL PADRE:</strong> {item.acud_nombres}</td>
-                                                                ) : item.nombre_parentesco === 'mama' ? (
-                                                                    <td colSpan={3}><strong>NOMBRE DE LA MADRE:</strong> {item.acud_nombres}</td>
-                                                                ) : (
-                                                                    <></>
-                                                                )}
-                                                                <td><strong>PROFESION:</strong> {item.acud_ocupacion}</td>
-                                                                <td></td>
-                                                            </tr>
-                                                        )}
-                                                        <tr>
-                                                            <td colSpan={2}><strong>RESIDENCIA:</strong>{item.acud_direccion}</td>
-                                                            <td><strong>TELEFONO:</strong>{item.celular}</td>
-                                                            <td><strong>EMPRESA:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                            <td><strong>TELEFONO:</strong></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><strong>CC N°:</strong>{item.acu_documento}</td>
-                                                            <td colSpan={2}><strong>EXPEDIDA EN:</strong>{item.acud_lugar_exp_doc}</td>
-                                                            <td><strong>E-MAIL:</strong>{item.acud_correo}</td>
-                                                        </tr>
-                                                    </>
-                                                ))}
-                                            </>) : (<>
-                                                {/**ACUDIENTE 1*/}
-                                                <tr>
-                                                    <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
-                                                    <td><strong>PROFESION:</strong></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colSpan={2}><strong>RESIDENCIA:</strong></td>
-                                                    <td><strong>TELEFONO:</strong></td>
-                                                    <td><strong>EMPRESA:</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                    <td><strong>TELEFONO:</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>CC N°:</strong></td>
-                                                    <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
-                                                    <td><strong>E-MAIL:</strong></td>
-                                                </tr>
-                                                {/**ACUDIENTE 2*/}
-                                                <tr>
-                                                    <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
-                                                    <td><strong>PROFESION:</strong></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colSpan={2}><strong>RESIDENCIA:</strong></td>
-                                                    <td><strong>TELEFONO:</strong></td>
-                                                    <td><strong>EMPRESA:</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                    <td><strong>TELEFONO:</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>CC N°:</strong></td>
-                                                    <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
-                                                    <td><strong>E-MAIL:</strong></td>
-                                                </tr>
-                                                {/**ACUDIENTE 3*/}
-                                                <tr>
-                                                    <td colSpan={3}><strong>ACUDIENTE:</strong> </td>
-                                                    <td><strong>PROFESION:</strong></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colSpan={2}><strong>RESIDENCIA:</strong></td>
-                                                    <td><strong>TELEFONO:</strong></td>
-                                                    <td><strong>EMPRESA:</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colSpan={3}><strong>DIRECCION DE LA EMPRESA:</strong></td>
-                                                    <td><strong>TELEFONO:</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>CC N°:</strong></td>
-                                                    <td colSpan={2}><strong>EXPEDIDA EN:</strong></td>
-                                                    <td><strong>E-MAIL:</strong></td>
-                                                </tr>
-                                            </>)}
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </Card>
-                    </Col>
-                </Grid>
                 {/* 4- Situación academica */}
                 <div className="mt-20">
                     <hr style={hrStyle} />

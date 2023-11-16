@@ -1,94 +1,147 @@
 .tabla-container {
-  width: 95%; /* Ajusta el ancho de la tabla según tus necesidades */
-  margin: 0 auto; /* Centra la tabla horizontalmente en el contenedor */
+  width: 95%;
+  /* Ajusta el ancho de la tabla según tus necesidades */
+  margin: 0 auto;
+  /* Centra la tabla horizontalmente en el contenedor */
 }
 
 
 .custom-table-basic {
-  border-collapse: collapse; /* Fusiona los bordes de las celdas */
+  border-collapse: collapse;
+  /* Fusiona los bordes de las celdas */
   width: 100%;
 }
 
 .custom-table-basic td {
   font-size: 9px;
-  border: 1px solid #ffffff; /* Agrega bordes a las celdas */
-  padding: 3px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
-  text-align: left; /* Centra el contenido de las celdas horizontalmente */
-  height: 20px; /* Reduce la altura de las celdas */
+  border: 1px solid #ffffff;
+  /* Agrega bordes a las celdas */
+  padding: 3px;
+  /* Ajusta el espaciado interno de las celdas según tus necesidades */
+  text-align: left;
+  /* Centra el contenido de las celdas horizontalmente */
+  height: 20px;
+  /* Reduce la altura de las celdas */
 }
+
 /*Estilos de tabla ESTUDIOS APROBADOS*/
 .custom-table {
-  border-collapse: collapse; /* Fusiona los bordes de las celdas */
+  border-collapse: collapse;
+  /* Fusiona los bordes de las celdas */
   width: 100%;
 }
+
 .custom-table td {
   font-size: 9px;
-  border: 1px solid #000000; /* Agrega bordes a las celdas */
-  padding: 1px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
-  text-align: center; /* Centra el contenido de las celdas horizontalmente */
-  height: 5px; /* Reduce la altura de las celdas */
+  border: 1px solid #000000;
+  /* Agrega bordes a las celdas */
+  padding: 1px;
+  /* Ajusta el espaciado interno de las celdas según tus necesidades */
+  text-align: center;
+  /* Centra el contenido de las celdas horizontalmente */
+  height: 5px;
+  /* Reduce la altura de las celdas */
 
 }
 
 .custom-table th {
-  height: 10px; /* Ajusta la altura de las celdas de encabezado */
+  height: 10px;
+  /* Ajusta la altura de las celdas de encabezado */
 }
 
 .custom-table tbody tr {
-  border: none; /* Elimina los bordes entre las filas */
+  border: none;
+  /* Elimina los bordes entre las filas */
 }
 
 /*DATOS FAMILIARES*/
 .custom-table-fam {
-  border-collapse: collapse; /* Fusiona los bordes de las celdas */
+  border-collapse: collapse;
+  /* Fusiona los bordes de las celdas */
   width: 100%;
 }
+
 .custom-table-fam td {
   font-size: 9px;
-  border: 1px solid #ffffff; /* Agrega bordes a las celdas */
-  padding: 1px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
-  text-align: left; /* Centra el contenido de las celdas horizontalmente */
-  height: 5px; /* Reduce la altura de las celdas */
+  border: 1px solid #ffffff;
+  /* Agrega bordes a las celdas */
+  padding: 1px;
+  /* Ajusta el espaciado interno de las celdas según tus necesidades */
+  text-align: left;
+  /* Centra el contenido de las celdas horizontalmente */
+  height: 5px;
+  /* Reduce la altura de las celdas */
 
 }
+
 /* TABLA SITUACION ACADEMICA */
 .custom-table-academic {
-  border-collapse: collapse; /* Fusiona los bordes de las celdas */
+  border-collapse: collapse;
+  /* Fusiona los bordes de las celdas */
   width: 100%;
 }
+
 .custom-table-academic td {
   font-size: 11px;
-  border: 1px solid #ffffff; /* Agrega bordes a las celdas */
-  padding: 1px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
-  text-align: left; /* Centra el contenido de las celdas horizontalmente */
-  height: 5px; /* Reduce la altura de las celdas */
+  border: 1px solid #ffffff;
+  /* Agrega bordes a las celdas */
+  padding: 1px;
+  /* Ajusta el espaciado interno de las celdas según tus necesidades */
+  text-align: left;
+  /* Centra el contenido de las celdas horizontalmente */
+  height: 5px;
+  /* Reduce la altura de las celdas */
 
 }
 
 /* TABLA FIRMAS */
 .custom-table-firma-estu {
-  border-collapse: collapse; /* Fusiona los bordes de las celdas */
+  border-collapse: collapse;
+  /* Fusiona los bordes de las celdas */
   width: 100%;
 }
+
 .custom-table-firma-estu td {
   font-size: 13px;
-  border: 1px solid #ffffff; /* Agrega bordes a las celdas */
-  padding: 2px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
-  text-align: center; /* Centra el contenido de las celdas horizontalmente */
-  height: 10px; /* Reduce la altura de las celdas */
+  border: 1px solid #ffffff;
+  /* Agrega bordes a las celdas */
+  padding: 2px;
+  /* Ajusta el espaciado interno de las celdas según tus necesidades */
+  text-align: center;
+  /* Centra el contenido de las celdas horizontalmente */
+  height: 10px;
+  /* Reduce la altura de las celdas */
 
 }
 
 .custom-table-firma-acud {
-  border-collapse: collapse; /* Fusiona los bordes de las celdas */
+  border-collapse: collapse;
+  /* Fusiona los bordes de las celdas */
   width: 100%;
 }
+
 .custom-table-firma-acud td {
   font-size: 12px;
-  border: 1px solid #ffffff; /* Agrega bordes a las celdas */
-  padding: 2px; /* Ajusta el espaciado interno de las celdas según tus necesidades */
-  text-align: start; /* Centra el contenido de las celdas horizontalmente */
-  height: 10px; /* Reduce la altura de las celdas */
+  border: 1px solid #ffffff;
+  /* Agrega bordes a las celdas */
+  padding: 2px;
+  /* Ajusta el espaciado interno de las celdas según tus necesidades */
+  text-align: start;
+  /* Centra el contenido de las celdas horizontalmente */
+  height: 10px;
+  /* Reduce la altura de las celdas */
 
 }
 
+.background-image {
+  background-image: url('../escudo.jpg');
+  background-size: cover; /* Ajusta el tamaño para cubrir completamente el contenedor */
+  background-position: center top; /* La imagen se posiciona en la mitad superior */
+  
+ 
+background-repeat: no-repeat;
+  
+ 
+height: 50vh; /* La mitad de la altura del contenedor */
+ 
+}

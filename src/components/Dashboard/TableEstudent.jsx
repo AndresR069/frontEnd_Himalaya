@@ -7,7 +7,7 @@ import DataTable from 'react-data-table-component'; //lib --> data table  https:
 import { Link } from 'react-router-dom'; //rutas en el dom
 import { Card, Title, Flex, Button, Divider, Callout, Text, Badge, Grid, Icon } from '@tremor/react'
 import Exel from './ExelExport/Exel';
-import Pdf from './PdfExport/Pdf';
+
 const tablaUrl = "http://localhost:8000/himalayaSchool/estudiantes";//URL Back-end llenado de tabla principal
 
 
@@ -44,7 +44,7 @@ const TableEstudent = () => {
         {
             name: 'Acciones',
             selector: data => <> <Link to={`/edit/${data.id_estudiante}`} className='btn btn-info'><Icon size="md" icon={PencilIcon} tooltip="Editar" /> </Link>   <Link to={`/pdf/${data.id_estudiante}`} target='_blank'><Icon size="md" icon={DocumentIcon} tooltip="Generar pdf" ></Icon></Link></>,
-             sortable: true,
+            sortable: true,
             width: "160px"
         },
         {
@@ -208,7 +208,7 @@ const TableEstudent = () => {
 
 
     return (
-        
+
         <Card className="max-h-fit max-h-screen">
             <ToastContainer /> {/** Necesario para que la notifacion se muestre --------------------- */}
 
@@ -287,7 +287,15 @@ const TableEstudent = () => {
                         size="xs"
                         variant="secondary"
                         icon={PlusSmallIcon}
-                    >Agregar Matricula</Button>
+                    >Nueva Matricula</Button>
+                </Link>
+
+                <Link to='/oldMatricula'>
+                    <Button
+                        size="xs"
+                        variant="secondary"
+                        icon={PlusSmallIcon}
+                    >Matricular</Button>
                 </Link>
 
                 <Exel exelData={data} fileName={curso}></Exel>{/*Componente exportacion data a exel */}

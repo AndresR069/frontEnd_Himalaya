@@ -48,7 +48,7 @@ const Consultas = () => {
     return (
         <div >
             {/* Main section */}
-            <Card className="mt-6">
+            <Card className="mt-6  min-w-[100%]">
                 <div className="h-96" >
                     <Title>Mujeres y Hombres matriculados</Title>
                     <BarChart
